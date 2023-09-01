@@ -110,8 +110,6 @@ function Searchbar({
             : <Icon id="MagnifyingGlass" size={24} strokeWidth={0.01} />}
         </Button>
       </form>
-
-      
     </div>
   );
 }

@@ -58,7 +58,7 @@ function Navbar({ items, searchbar, logo }: {
         </div>
         <div class="flex-auto flex justify-center">
           <div class="w-3/4 ...">
-          <Searchbar {...searchbar} />
+            <Searchbar {...searchbar} />
           </div>
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-2">

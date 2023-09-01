@@ -25,7 +25,6 @@ function NavItem({ item }: { item: INavItem }) {
             class="fixed hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 border-t border-b-2 border-base-200 w-screen"
             style={{ top: "0px", left: "0px", marginTop: headerHeight }}
           >
-           
             <ul class="flex items-start justify-center gap-6">
               {children.map((node) => (
                 <li class="p-6">
