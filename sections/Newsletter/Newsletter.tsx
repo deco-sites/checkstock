@@ -80,14 +80,14 @@ export default function Newsletter(props: Props) {
   );
 
   const bgLayout = isReverse
-    ? "bg-secondary text-secondary-content"
+    ? "bg-[#f53859] text-secondary-content"
     : "bg-transparent";
 
   return (
     <div
       class={`${
         bordered
-          ? isReverse ? "bg-secondary-content" : "bg-secondary"
+          ? isReverse ? "bg-secondary-content" : "bg-[#f53859]"
           : bgLayout
       } ${bordered ? "p-4 lg:p-16" : "p-0"}`}
     >

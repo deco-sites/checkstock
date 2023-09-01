@@ -20,7 +20,7 @@ function Navbar({ items, searchbar, logo }: {
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
-        class="md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
+        class="bg-[#f53859] md:hidden flex flex-row justify-between items-center border-b border-base-200 w-full pl-2 pr-6 gap-2"
       >
         <MenuButton />
 
@@ -57,8 +57,9 @@ function Navbar({ items, searchbar, logo }: {
           )}
         </div>
         <div class="flex-auto flex justify-center">
-          <SearchButton />
-          <Searchbar searchbar={searchbar} />
+          <div class="w-3/4 ...">
+          <Searchbar {...searchbar} />
+          </div>
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-2">
           <a
@@ -66,7 +67,7 @@ function Navbar({ items, searchbar, logo }: {
             href="/login"
             aria-label="Log in"
           >
-            <Icon id="User" class="text-base-100" size={24} strokeWidth={0.4} />
+            <Icon id="User" class="text-base-100" size={35} strokeWidth={0.4} />
           </a>
           {PLATFORM === "vtex" && <CartButtonVTEX />}
           {PLATFORM === "vnda" && <CartButtonVDNA />}

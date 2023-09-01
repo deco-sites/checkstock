@@ -19,8 +19,8 @@ function Searchbar({ searchbar }: Props) {
   return (
     <div
       class={`${
-        open ? "block border-y border-base-200 shadow" : "hidden"
-      } absolute left-0 top-0 w-screen z-50 bg-base-100`}
+        open ? "block border-y border-base-200 shadow" : "visible"
+      } left-0 top-0 w-screen z-50 bg-base-100`}
       style={{ marginTop: headerHeight }}
     >
       {open && (
