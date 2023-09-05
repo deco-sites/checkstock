@@ -1,4 +1,5 @@
 import Logo from "$store/components/footer/Logo.tsx";
+import Sobre from "$store/components/footer/Sobre.tsx";
 import Newsletter from "$store/islands/Newsletter.tsx";
 import FooterItems from "$store/components/footer/FooterItems.tsx";
 import Social from "$store/components/footer/Social.tsx";
@@ -21,6 +22,11 @@ export type Section = {
   label: string;
   items: Item[];
 };
+
+export interface Sobre {
+  title?: string;
+  description?: string;
+}
 
 export interface SocialItem {
   label:
@@ -62,7 +68,8 @@ export interface Layout {
     | "Secondary"
     | "Accent"
     | "Base 100"
-    | "Base 100 inverted";
+    | "Base 100 inverted"
+    | "Background Personalizado";
   variation?:
     | "Variation 1"
     | "Variation 2"
@@ -71,6 +78,7 @@ export interface Layout {
     | "Variation 5";
   hide?: {
     logo?: boolean;
+    sobre?: boolean;
     newsletter?: boolean;
     sectionLinks?: boolean;
     socialLinks?: boolean;
@@ -87,6 +95,10 @@ export interface Props {
     image: LiveImage;
     description?: string;
   };
+  sobre?: {
+    title?: string;
+    description?: string;
+  }
   newsletter?: {
     title?: string;
     /** @format textarea */
@@ -113,6 +125,10 @@ export interface Props {
 
 function Footer({
   logo,
+  sobre = {
+    title: "Sobre nós",
+    description: "",
+  },
   newsletter = {
     title: "Newsletter",
     description: "",
@@ -168,6 +184,7 @@ function Footer({
     variation: "Variation 1",
     hide: {
       logo: false,
+      sobre: false,
       newsletter: false,
       sectionLinks: false,
       socialLinks: false,
@@ -180,6 +197,7 @@ function Footer({
   },
 }: Props) {
   const _logo = layout?.hide?.logo ? <></> : <Logo logo={logo} />;
+  const _sobre = layout?.hide?.sobre ? <></> : <Sobre sobre={sobre} />
   const _newsletter = layout?.hide?.newsletter ? <></> : (
     <Newsletter
       content={newsletter}
@@ -324,8 +342,9 @@ function Footer({
             {layout?.hide?.newsletter ? <></> : <Divider />}
             {_logo}
             <div class="flex flex-col md:flex-row gap-10 lg:gap-20 md:justify-between">
+              {_sobre}
               {_sectionLinks}
-              <div class="flex flex-col gap-10 md:w-2/5 lg:pl-10">
+              <div class="flex flex-col gap-10 md:w-1/3 lg:pl-10">
                 {_payments}
                 {_social}
                 {_apps}

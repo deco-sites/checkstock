@@ -19,7 +19,7 @@ export default function FooterItems(
         <>
           {/* Tablet and Desktop view */}
           <ul
-            class={`hidden md:flex flex-row gap-6 lg:gap-10 ${
+            class={`hidden md:flex flex-row gap-6 lg:gap-10 md:w-1/3 ${
               justify && "lg:justify-between"
             }`}
           >
