@@ -4,7 +4,8 @@ export interface Layout {
     | "Secondary"
     | "Accent"
     | "Base 100"
-    | "Base 100 inverted";
+    | "Base 100 inverted"
+    | "Background Personalizado";
   variation?:
     | "Variation 1"
     | "Variation 2"
@@ -13,6 +14,7 @@ export interface Layout {
     | "Variation 5";
   hide?: {
     logo?: boolean;
+    sobre?: boolean;
     newsletter?: boolean;
     sectionLinks?: boolean;
     socialLinks?: boolean;
@@ -36,6 +38,8 @@ export default function colorClasses(layout: Layout) {
       return "bg-base-100 text-base-content";
     case "Base 100 inverted":
       return "bg-base-content text-base-100";
+    case "Background Personalizado":
+      return "bg-[#dbdbdb] text-[#f53859]";
     default:
       return "bg-primary text-primary-content";
   }
