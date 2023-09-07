@@ -99,6 +99,7 @@ export interface Props {
     title?: string;
     description?: string;
   };
+
   newsletter?: {
     title?: string;
     /** @format textarea */
@@ -198,6 +199,7 @@ function Footer({
 }: Props) {
   const _logo = layout?.hide?.logo ? <></> : <Logo logo={logo} />;
   const _sobre = layout?.hide?.sobre ? <></> : <Sobre sobre={sobre} />;
+
   const _newsletter = layout?.hide?.newsletter ? <></> : (
     <Newsletter
       content={newsletter}

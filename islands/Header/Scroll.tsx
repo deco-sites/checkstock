@@ -1,7 +1,7 @@
 import { Component, h } from "preact";
 
 // deno-lint-ignore ban-types
-class Scroll extends Component<{}, {scrolled: boolean}> {
+class Scroll extends Component<{}, { scrolled: boolean }> {
   constructor() {
     super();
     this.state = {
