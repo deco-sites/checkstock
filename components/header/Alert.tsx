@@ -17,7 +17,6 @@ function Alert({ alerts = [], interval = 5 }: Props) {
 
   return (
     <>
-      <Scroll />
       <div id={id}>
         <Slider class="carousel carousel-center w-screen bg-[#de3154] text-base-100 gap-6">
           {alerts.map((alert, index) => (
