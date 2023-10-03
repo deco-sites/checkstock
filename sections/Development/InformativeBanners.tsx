@@ -1,4 +1,5 @@
-function Services(){
+
+export function InformativeBanners(){
     return (
         <div class="mb-[70px] flex h-[175px] w-full justify-center bg-[#EDECEC] py-[50px] gap-6 mt-4">
         <div class="flex flex-row">
@@ -60,4 +61,4 @@ function Services(){
     );
 }
 
-export default Services;
+export default InformativeBanners;
